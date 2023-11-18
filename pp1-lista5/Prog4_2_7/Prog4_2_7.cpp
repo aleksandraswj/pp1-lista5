@@ -3,18 +3,71 @@
 
 #include <iostream>
 
-int main()
+using namespace std;
+
+void sumaTablic(int n, const int tab1[], const int tab2[], int tab3[])
 {
-    std::cout << "Hello World!\n";
+	for (int i = 0; i < n; i++)
+	{
+		tab3[i] = tab1[i] + tab2[i];
+	}
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+void wiekszyElement(int n, const int tab1[], const int tab2[], int tab3[])
+{
+	for (int i = 0; i < n; i++)
+	{
+		if (tab1[i] > tab2[i])
+		{
+			tab3[i] = tab1[i];
+		}
+		else
+		{
+			tab3[i] = tab2[i];
+		}
+	}
+}
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+void zamianaTablic(int n, int tab1[], int tab2[], int tab3[])
+{
+	for (int i = 0; i < n; i++)
+	{
+		int eltab1 = tab1[i];	
+		tab1[i] = tab3[i];
+		tab3[i] = tab2[i];	
+		tab2[i] = eltab1;
+	}
+}
+
+void wypiszTablice(string nazwa, int tab[], unsigned int n)
+{
+	cout << nazwa << endl;	
+	for (unsigned int i = 0; i < n; i++)
+	{
+		cout << tab[i] << " ";
+	}
+	cout << endl;
+}
+
+int main()
+{
+	const unsigned int rozmiar = 5;
+	int tab1[rozmiar] = { 10, 12, 3, 4, 5 };
+	int tab2[rozmiar] = { 6, 7, 8, 9, 10 };
+	int tab3[rozmiar] = { 0, 0, 0, 0, 0 };
+	wypiszTablice("Tablica 1", tab1, rozmiar);
+	wypiszTablice("Tablica 2", tab2, rozmiar);
+	wypiszTablice("Tablica 3", tab3, rozmiar);
+
+	sumaTablic(5, tab1, tab2, tab3);
+	wypiszTablice("Tablica 3", tab3, rozmiar);
+	
+	wiekszyElement(5, tab1, tab2, tab3);
+	wypiszTablice("Tablica 3", tab3, rozmiar);
+
+	zamianaTablic(5, tab1, tab2, tab3);
+	wypiszTablice("Tablica 1", tab1, rozmiar);
+	wypiszTablice("Tablica 2", tab2, rozmiar);
+	wypiszTablice("Tablica 3", tab3, rozmiar);
+}
+

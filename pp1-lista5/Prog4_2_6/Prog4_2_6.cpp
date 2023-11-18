@@ -25,6 +25,7 @@ void wypiszTablice(int tab[], unsigned int n)
 	{
 		cout << tab[i] << " ";
 	}
+	cout << endl;
 }
 
 int main()
