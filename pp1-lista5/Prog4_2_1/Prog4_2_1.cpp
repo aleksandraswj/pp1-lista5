@@ -2,12 +2,13 @@
 //
 
 #include <iostream>
+#include <string.h>
 
-using namespace std;    
+using namespace std;
 
 void zerujTablice(int n, int tab[])
 {
-	memset(tab, 0, n * sizeof(int));	// zerowanie tablicy	
+	memset(tab, 0, n * sizeof(int));	// zerowanie tablicy
 }
 void wpiszIndeksy(int n, int tab[])
 {
@@ -22,7 +23,7 @@ void podwojWartosci(int n, int tab[])
 	{
 		tab[i] *= 2;
 	}
-}	
+}
 
 void ustalWartosciBezwzgledne(int n, int tab[])
 {
@@ -38,21 +39,21 @@ void wypiszTablice(int n, int tab[])
 	{
 		cout << tab[i] << " ";
 	}
-	cout << endl;	
+	cout << endl;
 }
 
 int main()
 {
-	int tab[10] = { 1, -2, 3, -4, 5, -6, 7, -8, 9, -10 };	
-    wypiszTablice(10, tab);	
+	int tab[10] = { 1, -2, 3, -4, 5, -6, 7, -8, 9, -10 };
+    wypiszTablice(10, tab);
 	ustalWartosciBezwzgledne(10, tab);
 	wypiszTablice(10, tab);
-	zerujTablice(10, tab);	
-	wypiszTablice(10, tab);	
-	wpiszIndeksy(10, tab);	
-	wypiszTablice(10, tab);	
-	podwojWartosci(10, tab);	
-	wypiszTablice(10, tab);	
+	zerujTablice(10, tab);
+	wypiszTablice(10, tab);
+	wpiszIndeksy(10, tab);
+	wypiszTablice(10, tab);
+	podwojWartosci(10, tab);
+	wypiszTablice(10, tab);
 
 }
 
