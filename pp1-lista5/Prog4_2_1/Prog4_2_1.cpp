@@ -43,6 +43,7 @@ void wypiszTablice(int n, int tab[])
 
 int main()
 {
+	fdgyfyugfguiygu
 	int tab[10] = { 1, -2, 3, -4, 5, -6, 7, -8, 9, -10 };	
     wypiszTablice(10, tab);	
 	ustalWartosciBezwzgledne(10, tab);
